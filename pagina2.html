@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quadrado com informações e Botão de Áudio</title>
+    <style>
+
+      *{
+        margin: auto;
+      }
+
+      body {
+        background-color: #141414;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .square-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        height: calc(85vh - 34px);
+        width: calc(85vw - 34px);
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        border: 3px solid red;
+        text-align: center;
+      }
+
+      .square-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-size: cover;
+        border: 3px solid red;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #e50914;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .audio-buttons {
+        display: flex; /* Adiciona display flex para posicionar os botões lado a lado */
+      }
+
+      .audio-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #e50914;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .home-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #e50914;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square-container">
+      <div class="square-content">
+        <img
+          class="profile-image"
+          src="https://raw.githubusercontent.com/gabriel-meiki/imagens-de-projeto/main/foto%20de%20craudin.jpeg"
+          alt="Foto da Pessoa"
+        />
+      </div>
+      <div>
+        <h1>Título do Quadrado</h1>
+        <p>Algumas informações sobre o quadrado.</p>
+        <p>Adicione o conteúdo desejado aqui.</p>
+      </div>
+      <div class="audio-buttons">
+        <button class="audio-button">Clique para reproduzir áudio</button>
+        <button
+            class="home-button"
+            onclick="window.location.href='index.html'"
+          >
+            Voltar para a página inicial
+        </button>
+      </div>
+      </div>
+    </div>
+
+    <script>
+      var button = document.querySelector('.audio-button');
+      var audio = new Audio('caminho-para-arquivo-de-audio/audio.mp3');
+
+      button.addEventListener('click', function () {
+        if (audio.paused) {
+          audio.play();
+          button.textContent = 'Clique para pausar áudio';
+        } else {
+          audio.pause();
+          button.textContent = 'Clique para reproduzir áudio';
+        }
+      });
+    </script>
+  </body>
+</html>
